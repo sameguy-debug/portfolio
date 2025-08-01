@@ -1,0 +1,146 @@
+.img {
+  width: 300px;           /* or fixed: 300px */
+  height: auto;          /* maintain aspect ratio */
+  display: inline-block;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin-left: 80px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: #222;
+  color: #fff;
+}
+
+.highlight {
+  color: #00bcd4;
+}
+
+section {
+  margin: 40px 0;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #00bcd4;
+}
+
+.skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills li {
+  background: #00bcd4;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #00bcd4;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9em;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .skills ul {
+    flex-direction: column;
+  } 
+
+  .project-card {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Toggle Button */
+#toggle-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #00bcd4;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Default light theme */
+body.light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .project-card,
+body.dark input,
+body.dark textarea {
+  background-color: #1f1f1f;
+  color: #eee;
+  border-color: #444;
+}
+
+body.dark h2,
+body.dark h3,
+body.dark a {
+  color: #00e5ff;
+}

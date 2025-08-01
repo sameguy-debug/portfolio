@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BEAR | Developer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<button id="toggle-theme">🌙Mode</button>
+
+  <header class="hero">
+    <h1>Hi, I'm <span class="highlight">Kevin</span></h1>
+    <p>Frontend Developer | JavaScript Enthusiast | UI Designer</p>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a self-taught developer who started learning coding with
+      curiosity and determination. I began with HTML and CSS and slowly 
+      worked my way into JavaScript, building small projects and improving 
+      through practice. I enjoy solving problems and turning ideas into real
+      working websites. My learning style is hands-on — I learn best by doing,
+      making mistakes, and figuring things out step by step. Every line of code
+      I write brings me closer to becoming a better developer.
+    </p>
+      <img class="img" src="img/360_F_531710260_ByieqNe7Ut6QBHgIR7xgdsxH7gICrHr1.jpg">
+      <img class="img" src="img/istockphoto-1446486926-612x612.jpg">
+    <p>I enjoy using tools like VS Code, GitHub, 
+      and Chrome DevTools in my workflow. 
+      My learning journey includes small projects like a portfolio site, 
+      login pages, and UI designs. I'm now exploring Firebase and 
+      OpenAI integration to build smarter tools.</p>
+   </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+         <li>CSS</li>
+          <li>JavaScript</li>
+         <li>React</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+        <h3>My Portfolio Website</h3>
+           <p>A responsive website showcasing my work using HTML, CSS, and JavaScript.</p>
+         <a href="#">View Live</a> | <a href="#">GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Todo App</h3>
+      <p>A simple task manager built using JavaScript and localStorage.</p>
+      <a href="#">View Live</a> | <a href="#">GitHub</a>
+    </div>
+
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+        <p>Email: artify907@gmail.com</p>
+      <p><a href="https://github.com/yourusername">GitHub</a> | <a href="https://linkedin.com/in/yourusername">LinkedIn</a></p>
+  </section>
+  <footer>
+    <p>© 2025 Artify. All rights reserved.</p>
+  </footer>
+  <script>
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('section').forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add('visible');
+      }
+    });
+  });
+</script>
+<script>
+  const toggleButton = document.getElementById('toggle-theme');
+  const body = document.body;
+
+  // Set initial theme from localStorage
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  body.classList.add(savedTheme);
+
+  // Toggle theme on click
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    body.classList.toggle('light');
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>
+
+
+
+</body>
+</html>
